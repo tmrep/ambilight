@@ -7,9 +7,9 @@ from numba import jit
 # import cProfile
 
 # params to set
-num_at_bottom_left = 3
-num_at_left = 5
-num_at_top = 8
+num_at_bottom_left = 12
+num_at_left = 16
+num_at_top = 29
 num_at_right = num_at_left
 num_at_bottom_right = num_at_bottom_left
 
@@ -20,7 +20,7 @@ mon = sct.monitors[monitor_number]
 
 # coordinates of LEDs
 dist_to_edge = 25 # px
-dist = (mon["width"]-2*dist_to_edge)/num_at_top;
+dist = (mon["width"]-2*dist_to_edge)/num_at_top
 x = np.hstack((np.linspace(mon["left"]+dist_to_edge+dist*num_at_bottom_left,mon["left"]+dist_to_edge,num_at_bottom_left),
             np.ones(num_at_left)*(mon["left"]+dist_to_edge),
             np.linspace(mon["left"]+dist_to_edge,mon["width"]-dist_to_edge,num_at_top),
@@ -67,7 +67,7 @@ img = np.array(sct.grab(mon)) # Get raw pixels (bgra) from the screen, save it t
 go_fast(img,values)
 
 # with serial.Serial('/dev/ttyACM0') as ser:
-with serial.Serial('COM13') as ser:
+with serial.Serial('COM3') as ser:
     while "Screen capturing":
         # last_time = time.time()
         img = np.array(sct.grab(mon)) # Get raw pixels (bgra) from the screen, save it to a Numpy array

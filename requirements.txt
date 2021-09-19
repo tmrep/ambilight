@@ -1,0 +1,4 @@
+mss==6.1.0
+numpy==1.19.3
+pyserial==3.5
+numba==0.54.0

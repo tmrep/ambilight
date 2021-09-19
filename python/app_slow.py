@@ -64,7 +64,7 @@ img = np.array(sct.grab(mon)) # Get raw pixels (bgra) from the screen, save it t
 go_fast(img,values)
 
 # with serial.Serial('/dev/ttyACM0') as ser:
-with serial.Serial('COM4') as ser:
+with serial.Serial('COM3') as ser:
     while "Screen capturing":
         # last_time = time.time()
         img = np.array(sct.grab(mon)) # Get raw pixels (bgra) from the screen, save it to a Numpy array
